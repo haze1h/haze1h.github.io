@@ -1,1 +1,2 @@
 # HJY.github.io
+This is a personal portfolio website developed and maintained by Jiaying Hui. I am a postgraduate student specializing in AI Agent, LLM applications, and RAG systems. The website comprehensively showcases my educational background, professional skills, project experiences, and contact information. It aims to help recruiters and peers quickly understand my practical capabilities and project experience in the field of artificial intelligence.

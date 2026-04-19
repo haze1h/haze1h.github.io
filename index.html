@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JIAYING HUI | AI Agent Engineer</title>
+    <title>惠嘉盈 | AI Agent 工程师</title>
     <!-- 引入Tailwind CSS 快速实现精美样式 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入Font Awesome 图标 -->
@@ -49,18 +49,33 @@
     <!-- 导航栏：姓名放大醒目优化 -->
     <nav class="sticky top-0 bg-white nav-shadow z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl md:text-3xl font-bold text-secondary tracking-wide">JIAYING HUI</a>
-            <!-- 桌面端导航 -->
-            <div class="hidden md:flex gap-6">
-                <a href="#home" class="hover:text-secondary transition-colors">Home</a>
-                <a href="#about" class="hover:text-secondary transition-colors">About</a>
-                <a href="#skills" class="hover:text-secondary transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-secondary transition-colors">Projects</a>
-                <a href="#resume" class="hover:text-secondary transition-colors">Resume</a>
-                <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+            <a href="#home" id="nav-name" class="text-2xl md:text-3xl font-bold text-secondary tracking-wide">JIAYING HUI</a>
+            
+            <!-- 语言切换按钮 -->
+            <div class="flex items-center gap-4">
+                <button id="langToggle" 
+                        class="px-4 py-2 bg-secondary text-white text-sm font-medium rounded-full hover:bg-secondary/90 transition-colors flex items-center gap-2">
+                    <i class="fas fa-language"></i>
+                    <span id="langText">切换至中文</span>
+                </button>
+                
+                <!-- 桌面端导航 -->
+                <div id="desktopNav" class="hidden md:flex gap-6">
+                    <a href="#home" class="hover:text-secondary transition-colors">Home</a>
+                    <a href="#about" class="hover:text-secondary transition-colors">About</a>
+                    <a href="#skills" class="hover:text-secondary transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-secondary transition-colors">Projects</a>
+                    <a href="#resume" class="hover:text-secondary transition-colors">Resume</a>
+                    <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+                </div>
             </div>
+
             <!-- 移动端导航 -->
-            <div class="md:hidden">
+            <div class="md:hidden flex items-center gap-3">
+                <button id="langToggleMobile" 
+                        class="px-3 py-1.5 bg-secondary text-white text-xs font-medium rounded-full hover:bg-secondary/90 transition-colors">
+                    <i class="fas fa-language"></i>
+                </button>
                 <button id="menuBtn" class="text-xl">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -80,8 +95,8 @@
     <!-- 1. Home / Headline 板块 -->
     <section id="home" class="section-padding bg-gradient-to-r from-primary to-dark text-white text-center">
         <div class="container mx-auto max-w-4xl">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">AI Agent Engineer & LLM Developer</h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-300">Seeking AI Agent/LLM Application Job, focusing on Multi-Agent System, RAG Architecture and LLM-based Product Development</p>
+            <h1 id="home-title" class="text-4xl md:text-5xl font-bold mb-4">AI Agent Engineer & LLM Developer</h1>
+            <p id="home-subtitle" class="text-xl md:text-2xl mb-8 text-gray-300">Seeking AI Agent/LLM Application Job, focusing on Multi-Agent System, RAG Architecture and LLM-based Product Development</p>
             <div class="flex flex-wrap justify-center gap-3 mb-8">
                 <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">AI Agent</span>
                 <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">LLM</span>
@@ -91,29 +106,29 @@
                 <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">PyTorch</span>
                 <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">FastAPI</span>
             </div>
-            <a href="#projects" class="px-6 py-3 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary/80 transition-colors">View My Projects</a>
+            <a href="#projects" id="view-projects-btn" class="px-6 py-3 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary/80 transition-colors">View My Projects</a>
         </div>
     </section>
 
     <!-- 2. About Me 板块 -->
     <section id="about" class="section-padding">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <h2 id="about-title" class="text-3xl font-bold mb-8 text-center">About Me</h2>
             <div class="bg-white p-6 rounded-xl shadow-md">
-                <p class="mb-4 leading-relaxed">I am a postgraduate student majoring in Artificial Intelligence & Business Analytics at Lingnan University, with a solid background in Computer Science. I focus on AI Agent architecture design, RAG system development, and LLM application integration. I have rich experience in team project leadership and full-stack AI system development.</p>
-                <p class="mb-6 leading-relaxed">I am passionate about building practical LLM-based products and multi-agent systems, committed to transforming advanced AI technologies into scalable and valuable applications.</p>
+                <p id="about-p1" class="mb-4 leading-relaxed">I am a postgraduate student majoring in Artificial Intelligence & Business Analytics at Lingnan University, with a solid background in Computer Science. I focus on AI Agent architecture design, RAG system development, and LLM application integration. I have rich experience in team project leadership and full-stack AI system development.</p>
+                <p id="about-p2" class="mb-6 leading-relaxed">I am passionate about building practical LLM-based products and multi-agent systems, committed to transforming advanced AI technologies into scalable and valuable applications.</p>
                 
                 <div class="mb-6">
-                    <h3 class="text-xl font-semibold mb-3 text-secondary">Education Background</h3>
-                    <ul class="space-y-2">
+                    <h3 id="education-title" class="text-xl font-semibold mb-3 text-secondary">Education Background</h3>
+                    <ul id="education-list" class="space-y-2">
                         <li><strong>Lingnan University, Hong Kong</strong> | MSc in Artificial Intelligence & Business Analytics | 2025 – 2026</li>
                         <li><strong>Wenhua College</strong> | BEng in Computer Science | 2021 – 2025</li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-semibold mb-3 text-secondary">Strengths & Focus Areas</h3>
-                    <ul class="list-disc list-inside space-y-1">
+                    <h3 id="strengths-title" class="text-xl font-semibold mb-3 text-secondary">Strengths & Focus Areas</h3>
+                    <ul id="strengths-list" class="list-disc list-inside space-y-1">
                         <li>AI Agent Architecture Design & Multi-Agent Orchestration</li>
                         <li>Full RAG Pipeline Development & LLM Prompt Engineering</li>
                         <li>End-to-End AI System Integration & Deployment</li>
@@ -129,14 +144,14 @@
     <!-- 3. Skills 板块 -->
     <section id="skills" class="section-padding bg-gray-50">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+            <h2 id="skills-title" class="text-3xl font-bold mb-8 text-center">Skills</h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <h3 class="text-xl font-semibold mb-4 text-secondary flex items-center">
                         <i class="fas fa-code mr-2"></i> Technical Skills
                     </h3>
-                    <ul class="space-y-2">
-                        <li>Python, SQL, C, Java</li>
+                    <ul id="tech-skills-list" class="space-y-2">
+                        <li>Python, SQL</li>
                         <li>LLM, RAG, Multi-Agent Systems</li>
                         <li>PyTorch, Deep Learning Models</li>
                         <li>Machine Learning Algorithms</li>
@@ -145,21 +160,20 @@
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <h3 class="text-xl font-semibold mb-4 text-secondary flex items-center">
-                        <i class="fas fa-brain mr-2"></i> Business Skills
+                        <i class="fas fa-brain mr-2"></i> AI & ML
                     </h3>
-                    <ul class="space-y-2">
-                        <li>AI Agent Task Decomposition</li>
+                    <ul id="ai-skills-list" class="space-y-2">
+                        <li>LLM, RAG, Multi-Agent</li>
                         <li>Prompt Engineering & Hallucination Reduction</li>
-                        <li>System Design & Architecture Planning</li>
-                        <li>Project Management & Team Coordination</li>
-                        <li>Experimental Design & Performance Analysis</li>
+                        <li>CNN, Q-Learning</li>
+                        <li>Random Forest, GBT</li>
                     </ul>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <h3 class="text-xl font-semibold mb-4 text-secondary flex items-center">
                         <i class="fas fa-tools mr-2"></i> Tools & Frameworks
                     </h3>
-                    <ul class="space-y-2">
+                    <ul id="tools-list" class="space-y-2">
                         <li>FastAPI, React, TypeScript</li>
                         <li>Ollama, OpenCV, Git</li>
                         <li>PostgreSQL, MongoDB</li>
@@ -171,23 +185,23 @@
         </div>
     </section>
 
-    <!-- 4. Projects (全项目统一作业格式) -->
+    <!-- 4. Projects 板块 -->
     <section id="projects" class="section-padding">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <h2 id="projects-title" class="text-3xl font-bold mb-8 text-center">Projects</h2>
             <div class="space-y-8">
-                <!-- 项目1：LaneChange（个人项目） -->
+                <!-- 项目1：LaneChange -->
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-primary">Lane Change - Deep Learning Game</h3>
+                        <h3 id="proj1-title" class="text-xl font-bold text-primary">Lane Change - Deep Learning Game</h3>
                         <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">2026 | Personal Project</span>
                     </div>
                     <div class="space-y-3 text-gray-700">
-                        <p><strong>Problem:</strong> Develop an AI-driven obstacle avoidance game using reinforcement learning to realize automatic lane change and obstacle avoidance.</p>
-                        <p><strong>Data:</strong> Real-time game environment state data including lane position, obstacle distance and action feedback.</p>
-                        <p><strong>Approach:</strong> Implemented Q-Learning algorithm, designed reward function and epsilon-greedy exploration strategy.</p>
-                        <p><strong>Outcome:</strong> AI agent can independently complete obstacle avoidance tasks, stable performance in 3-lane game environment.</p>
-                        <p><strong>My Contribution:</strong> Independent development of full project including environment construction, agent design, training and deployment.</p>
+                        <p><strong id="proj1-problem-label">Problem:</strong> <span id="proj1-problem">Develop an AI-driven obstacle avoidance game using reinforcement learning to realize automatic lane change and obstacle avoidance.</span></p>
+                        <p><strong id="proj1-data-label">Data:</strong> <span id="proj1-data">Real-time game environment state data including lane position, obstacle distance and action feedback.</span></p>
+                        <p><strong id="proj1-approach-label">Approach:</strong> <span id="proj1-approach">Implemented Q-Learning algorithm, designed reward function and epsilon-greedy exploration strategy.</span></p>
+                        <p><strong id="proj1-outcome-label">Outcome:</strong> <span id="proj1-outcome">AI agent can independently complete obstacle avoidance tasks, stable performance in 3-lane game environment.</span></p>
+                        <p><strong id="proj1-contrib-label">My Contribution:</strong> <span id="proj1-contrib">Independent development of full project including environment construction, agent design, training and deployment.</span></p>
                         <div class="pt-2">
                             <a href="https://github.com/haze1h/LaneChange.git" target="_blank" class="text-secondary hover:underline flex items-center">
                                 <i class="fab fa-github mr-1"></i> View GitHub Repository
@@ -196,18 +210,18 @@
                     </div>
                 </div>
 
-                <!-- 项目2：HK Intelligent Trip Planner（团队项目） -->
+                <!-- 项目2：HK Intelligent Trip Planner -->
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-primary">HK Intelligent Trip Planner</h3>
+                        <h3 id="proj2-title" class="text-xl font-bold text-primary">HK Intelligent Trip Planner</h3>
                         <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">2026 | Team Project (Leader)</span>
                     </div>
                     <div class="space-y-3 text-gray-700">
-                        <p><strong>Problem:</strong> Develop an intelligent system to generate customized multi-day Hong Kong travel itineraries based on user budget, pace, preferences and constraints.</p>
-                        <p><strong>Data:</strong> Hong Kong activity dataset including attractions, food, and entertainment information.</p>
-                        <p><strong>Approach:</strong> Built Planner Agent + Critic Agent architecture, integrated local LLM (Ollama Mistral-7B), FastAPI backend and React frontend.</p>
-                        <p><strong>Outcome:</strong> Realized intelligent itinerary generation with budget estimation, pace control and preference matching, stable multi-turn interaction.</p>
-                        <p><strong>My Contribution:</strong> As team leader, responsible for Planner Agent development, system integration, architecture design and team coordination.</p>
+                        <p><strong id="proj2-problem-label">Problem:</strong> <span id="proj2-problem">Users need a customized travel planner with budget, pace and preference constraints.</span></p>
+                        <p><strong id="proj2-data-label">Data:</strong> <span id="proj2-data">Hong Kong attractions, food, accommodation and transportation dataset.</span></p>
+                        <p><strong id="proj2-approach-label">Approach:</strong> <span id="proj2-approach">Built Planner + Critic multi-agent system based on Ollama & Mistral-7B.</span></p>
+                        <p><strong id="proj2-outcome-label">Outcome:</strong> <span id="proj2-outcome">Realized intelligent itinerary generation with budget estimation, pace control and preference matching, stable multi-turn interaction.</span></p>
+                        <p><strong id="proj2-contrib-label">My Contribution:</strong> <span id="proj2-contrib">As team leader, completed agent development, system integration and architecture design.</span></p>
                         <div class="pt-2">
                             <a href="https://github.com/haze1h/HK-Intelligent-Trip-Planner.git" target="_blank" class="text-secondary hover:underline flex items-center">
                                 <i class="fab fa-github mr-1"></i> View GitHub Repository
@@ -216,18 +230,18 @@
                     </div>
                 </div>
 
-                <!-- 项目3：AgenticRAG（统一格式） -->
+                <!-- 项目3：AgenticRAG -->
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-primary">AgenticRAG for University Policies & Courses</h3>
+                        <h3 id="proj3-title" class="text-xl font-bold text-primary">AgenticRAG for University Policies & Courses</h3>
                         <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Team Project | RAG & LLM</span>
                     </div>
                     <div class="space-y-3 text-gray-700">
-                        <p><strong>Problem:</strong> Solve the problems of scattered information and inconvenient query of university policies, courses and assignments, build an intelligent Q&A system to improve the efficiency of information acquisition.</p>
-                        <p><strong>Data:</strong> Multi-source text data including university policy documents, course syllabi and assignment requirements.</p>
-                        <p><strong>Approach:</strong> Develop an intelligent Q&A system based on Retrieval-Augmented Generation (RAG) and Agentic architecture.</p>
-                        <p><strong>Outcome:</strong> Realized accurate intelligent Q&A for university information, reduced query costs and improved answer accuracy and reasoning ability.</p>
-                        <p><strong>My Contribution:</strong> Collected and organized multi-source data to provide data support for model construction; Designed and executed test cases to verify the Q&A effect of Agentic RAG; Conducted comparative experiments between Agentic RAG and traditional RAG, quantitatively analyzed accuracy, reasoning ability and efficiency, and provided a basis for system optimization.</p>
+                        <p><strong id="proj3-problem-label">Problem:</strong> <span id="proj3-problem">Students cannot quickly query university policies, courses and assignment information.</span></p>
+                        <p><strong id="proj3-data-label">Data:</strong> <span id="proj3-data">University policy documents, course syllabi and academic notices.</span></p>
+                        <p><strong id="proj3-approach-label">Approach:</strong> <span id="proj3-approach">Develop an intelligent Q&A system based on Retrieval-Augmented Generation (RAG) and Agentic architecture.</span></p>
+                        <p><strong id="proj3-outcome-label">Outcome:</strong> <span id="proj3-outcome">Realized accurate intelligent Q&A for university information, reduced query costs and improved answer accuracy and reasoning ability.</span></p>
+                        <p><strong id="proj3-contrib-label">My Contribution:</strong> <span id="proj3-contrib">Data collection, test case design, comparative experiments between AgenticRAG and RAG.</span></p>
                         <div class="pt-2">
                             <a href="https://github.com/terzotian/RAGagent.git" target="_blank" class="text-secondary hover:underline flex items-center">
                                 <i class="fab fa-github mr-1"></i> View GitHub Repository
@@ -236,18 +250,18 @@
                     </div>
                 </div>
 
-                <!-- 项目4：Titanic ML（统一格式） -->
+                <!-- 项目4：Titanic ML -->
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-primary">Machine Learning on Titanic Passenger Data</h3>
+                        <h3 id="proj4-title" class="text-xl font-bold text-primary">Machine Learning on Titanic Passenger Data</h3>
                         <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Team Project | Machine Learning</span>
                     </div>
                     <div class="space-y-3 text-gray-700">
-                        <p><strong>Problem:</strong> Build machine learning models to predict the survival probability of Titanic passengers and mine key factors affecting survival rate.</p>
-                        <p><strong>Data:</strong> Public Titanic passenger dataset including personal information, ticket information and survival status.</p>
-                        <p><strong>Approach:</strong> Data cleaning, preprocessing, exploratory data analysis (EDA) and classification model construction.</p>
-                        <p><strong>Outcome:</strong> Completed the full data processing process, provided high-quality data support for model training and result analysis.</p>
-                        <p><strong>My Contribution:</strong> Responsible for data acquisition, data cleaning, preprocessing and Exploratory Data Analysis (EDA) of the Titanic dataset.</p>
+                        <p><strong id="proj4-problem-label">Problem:</strong> <span id="proj4-problem">Build machine learning models to predict the survival probability of Titanic passengers and mine key factors affecting survival rate.</span></p>
+                        <p><strong id="proj4-data-label">Data:</strong> <span id="proj4-data">Public Titanic passenger dataset including personal information, ticket information and survival status.</span></p>
+                        <p><strong id="proj4-approach-label">Approach:</strong> <span id="proj4-approach">Data cleaning, EDA, feature engineering, classification model training.</span></p>
+                        <p><strong id="proj4-outcome-label">Outcome:</strong> <span id="proj4-outcome">Completed the full data processing process, provided high-quality data support for model training and result analysis.</span></p>
+                        <p><strong id="proj4-contrib-label">My Contribution:</strong> <span id="proj4-contrib">Responsible for data acquisition, data cleaning, preprocessing and Exploratory Data Analysis (EDA) of the Titanic dataset.</span></p>
                         <div class="pt-2">
                             <a href="https://github.com/chuyuezhang2-cmd/Group-Assignment----Five-NN.git" target="_blank" class="text-secondary hover:underline flex items-center">
                                 <i class="fab fa-github mr-1"></i> View GitHub Repository
@@ -256,18 +270,18 @@
                     </div>
                 </div>
 
-                <!-- 项目5：CIFAR-100 CNN（统一格式） -->
+                <!-- 项目5：CIFAR-100 CNN -->
                 <div class="bg-white p-6 rounded-xl shadow-md card-hover">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-primary">From Linear Baseline to Residual CNN: CIFAR-100 Classification</h3>
+                        <h3 id="proj5-title" class="text-xl font-bold text-primary">From Linear Baseline to Residual CNN: CIFAR-100 Classification</h3>
                         <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Team Project | Deep Learning</span>
                     </div>
                     <div class="space-y-3 text-gray-700">
-                        <p><strong>Problem:</strong> Complete image classification task on CIFAR-100 dataset, iterate and optimize from linear baseline model to residual CNN model.</p>
-                        <p><strong>Data:</strong> CIFAR-100 image dataset containing 100 categories of color image data.</p>
-                        <p><strong>Approach:</strong> Dataset splitting, data normalization, data augmentation, and linear baseline model training.</p>
-                        <p><strong>Outcome:</strong> Completed baseline model construction and data preprocessing, laid a foundation for the optimization of deep learning models.</p>
-                        <p><strong>My Contribution:</strong> Downloaded CIFAR-100 dataset and split train/validation/test sets; Implemented data normalization (mean=[0.4914,0.4822,0.4465], std=[0.2023,0.1994,0.2010]) and augmentation (RandomCrop, HorizontalFlip); Trained linear model (input 3072 → 100) as the baseline.</p>
+                        <p><strong id="proj5-problem-label">Problem:</strong> <span id="proj5-problem">Complete image classification task on CIFAR-100 dataset, iterate and optimize from linear baseline model to residual CNN model.</span></p>
+                        <p><strong id="proj5-data-label">Data:</strong> <span id="proj5-data">CIFAR-100 image dataset containing 100 categories of color image data.</span></p>
+                        <p><strong id="proj5-approach-label">Approach:</strong> <span id="proj5-approach">Dataset splitting, data normalization, data augmentation, and linear baseline model training.</span></p>
+                        <p><strong id="proj5-outcome-label">Outcome:</strong> <span id="proj5-outcome">Completed baseline model construction and data preprocessing, laid a foundation for the optimization of deep learning models.</span></p>
+                        <p><strong id="proj5-contrib-label">My Contribution:</strong> <span id="proj5-contrib">Dataset processing, normalization, augmentation and linear baseline.</span></p>
                         <div class="pt-2">
                             <a href="https://github.com/coraagg/Group-Assignment---OptiMates.git" target="_blank" class="text-secondary hover:underline flex items-center">
                                 <i class="fab fa-github mr-1"></i> View GitHub Repository
@@ -279,14 +293,13 @@
         </div>
     </section>
 
-    <!-- 5. Resume 板块：修复为直接下载本地CV-English.pdf -->
+    <!-- 5. Resume 板块 -->
     <section id="resume" class="section-padding bg-gray-50">
         <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-8">Resume</h2>
+            <h2 id="resume-title" class="text-3xl font-bold mb-8">Resume</h2>
             <div class="bg-white p-8 rounded-xl shadow-md inline-block">
-                <p class="mb-6 text-lg">Download my full resume to learn more about my education, skills and projects.</p>
-                <!-- 核心修改：直接下载本地CV-English.pdf，新增download属性 -->
-                <a href="CV-English.pdf" download class="px-6 py-3 bg-secondary text-white font-semibold rounded-full hover:bg-secondary/80 transition-colors inline-flex items-center">
+                <p id="resume-desc" class="mb-6 text-lg">Download my full resume to learn more about my education, skills and projects.</p>
+                <a href="CV-CN.pdf" download class="px-6 py-3 bg-secondary text-white font-semibold rounded-full hover:bg-secondary/80 transition-colors inline-flex items-center">
                     <i class="fas fa-download mr-2"></i> Download CV (PDF)
                 </a>
             </div>
@@ -296,7 +309,7 @@
     <!-- 6. Contact 板块 -->
     <section id="contact" class="section-padding bg-primary text-white">
         <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+            <h2 id="contact-title" class="text-3xl font-bold mb-8">Contact Me</h2>
             <div class="flex flex-col md:flex-row justify-center gap-6 mb-8">
                 <a href="mailto:15090737110@163.com" class="flex items-center justify-center gap-2 text-xl hover:text-secondary transition-colors">
                     <i class="fas fa-envelope"></i> 15090737110@163.com
@@ -308,32 +321,363 @@
                     <i class="fas fa-phone"></i> +86 15090737110
                 </a>
             </div>
-            <p class="text-gray-400">Looking forward to connecting with you!</p>
+            <p id="contact-footer" class="text-gray-400">Looking forward to connecting with you!</p>
         </div>
     </section>
 
     <!-- 页脚 -->
     <footer class="bg-dark text-white py-4 text-center">
-        <p>&copy; 2026 JIAYING HUI | AI Agent Engineer Personal Website</p>
+        <p id="footer-text">&copy; 2026 JIAYING HUI | AI Agent Engineer Personal Website</p>
     </footer>
 
     <!-- 交互JS -->
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        document.querySelectorAll('#mobileMenu a').forEach(item => {
-            item.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        // 语言切换功能
+        let isChinese = false;
+
+        const translations = {
+            // Navigation
+            "nav-name": {
+                en: "JIAYING HUI",
+                zh: "惠嘉盈"
+            },
+            // Home
+            "home-title": {
+                en: "AI Agent Engineer & LLM Developer",
+                zh: "AI Agent 工程师 & LLM 开发者"
+            },
+            "home-subtitle": {
+                en: "Seeking AI Agent/LLM Application Job, focusing on Multi-Agent System, RAG Architecture and LLM-based Product Development",
+                zh: "正在寻找AI Agent/LLM应用相关职位，专注于多Agent系统、RAG架构和基于LLM的产品开发"
+            },
+            "view-projects-btn": {
+                en: "View My Projects",
+                zh: "查看我的项目"
+            },
+            // About
+            "about-title": {
+                en: "About Me",
+                zh: "关于我"
+            },
+            "about-p1": {
+                en: "I am a postgraduate student majoring in Artificial Intelligence & Business Analytics at Lingnan University, with a solid background in Computer Science. I focus on AI Agent architecture design, RAG system development, and LLM application integration. I have rich experience in team project leadership and full-stack AI system development.",
+                zh: "我是岭南大学人工智能与商业分析硕士研究生，拥有计算机科学本科背景。我专注于AI Agent架构设计、RAG系统开发以及LLM应用集成。在团队项目领导和全栈AI系统开发方面拥有丰富经验。"
+            },
+            "about-p2": {
+                en: "I am passionate about building practical LLM-based products and multi-agent systems, committed to transforming advanced AI technologies into scalable and valuable applications.",
+                zh: "我热衷于构建实用的基于LLM的产品和多Agent系统，致力于将先进AI技术转化为可扩展且有价值的应用。"
+            },
+            "education-title": {
+                en: "Education Background",
+                zh: "教育背景"
+            },
+            "education-list": {
+                en: `<li><strong>Lingnan University, Hong Kong</strong> | MSc in Artificial Intelligence & Business Analytics | 2025 – 2026</li>
+                     <li><strong>Wenhua College</strong> | BEng in Computer Science | 2021 – 2025</li>`,
+                zh: `<li><strong>岭南大学，香港</strong> | 人工智能与商业分析硕士 | 2025 – 2026</li>
+                     <li><strong>文华学院</strong> | 计算机科学与技术学士 | 2021 – 2025</li>`
+            },
+            "strengths-title": {
+                en: "Strengths & Focus Areas",
+                zh: "优势与专注领域"
+            },
+            "strengths-list": {
+                en: `<li>AI Agent Architecture Design & Multi-Agent Orchestration</li>
+                     <li>Full RAG Pipeline Development & LLM Prompt Engineering</li>
+                     <li>End-to-End AI System Integration & Deployment</li>
+                     <li>Team Project Leadership & Technical Coordination</li>
+                     <li>Machine Learning & Deep Learning Model Development</li>
+                     <li>Data Processing, EDA and Experimental Analysis</li>`,
+                zh: `<li>AI Agent 架构设计与多Agent系统编排</li>
+                     <li>完整RAG管道开发与LLM提示工程</li>
+                     <li>端到端AI系统集成与部署</li>
+                     <li>团队项目领导与技术协调</li>
+                     <li>机器学习与深度学习模型开发</li>
+                     <li>数据处理、探索性数据分析（EDA）与实验分析</li>`
+            },
+            // Skills
+            "skills-title": {
+                en: "Skills",
+                zh: "技能"
+            },
+            "tech-skills-list": {
+                en: `<li>Python, SQL</li>
+                     <li>LLM, RAG, Multi-Agent Systems</li>
+                     <li>PyTorch, Deep Learning Models</li>
+                     <li>Machine Learning Algorithms</li>
+                     <li>Data Processing & EDA Analysis</li>`,
+                zh: `<li>Python, SQL</li>
+                     <li>LLM, RAG, 多Agent系统</li>
+                     <li>PyTorch, 深度学习模型</li>
+                     <li>机器学习算法</li>
+                     <li>数据处理与EDA分析</li>`
+            },
+            "ai-skills-list": {
+                en: `<li>LLM, RAG, Multi-Agent</li>
+                     <li>Prompt Engineering & Hallucination Reduction</li>
+                     <li>CNN, Q-Learning</li>
+                     <li>Random Forest, GBT</li>`,
+                zh: `<li>LLM, RAG, 多Agent</li>
+                     <li>提示工程与幻觉减少</li>
+                     <li>CNN, Q-Learning</li>
+                     <li>随机森林, GBT</li>`
+            },
+            "tools-list": {
+                en: `<li>FastAPI, React, TypeScript</li>
+                     <li>Ollama, OpenCV, Git</li>
+                     <li>PostgreSQL, MongoDB</li>
+                     <li>GitHub, VS Code</li>
+                     <li>PyTorch, Scikit-learn, Pandas</li>`,
+                zh: `<li>FastAPI, React, TypeScript</li>
+                     <li>Ollama, OpenCV, Git</li>
+                     <li>PostgreSQL, MongoDB</li>
+                     <li>GitHub, VS Code</li>
+                     <li>PyTorch, Scikit-learn, Pandas</li>`
+            },
+            // Projects common labels
+            "proj1-problem-label": { en: "Problem:", zh: "问题：" },
+            "proj1-data-label": { en: "Data:", zh: "数据：" },
+            "proj1-approach-label": { en: "Approach:", zh: "方法：" },
+            "proj1-outcome-label": { en: "Outcome:", zh: "成果：" },
+            "proj1-contrib-label": { en: "My Contribution:", zh: "我的贡献：" },
+            
+            "proj2-problem-label": { en: "Problem:", zh: "问题：" },
+            "proj2-data-label": { en: "Data:", zh: "数据：" },
+            "proj2-approach-label": { en: "Approach:", zh: "方法：" },
+            "proj2-outcome-label": { en: "Outcome:", zh: "成果：" },
+            "proj2-contrib-label": { en: "My Contribution:", zh: "我的贡献：" },
+            
+            "proj3-problem-label": { en: "Problem:", zh: "问题：" },
+            "proj3-data-label": { en: "Data:", zh: "数据：" },
+            "proj3-approach-label": { en: "Approach:", zh: "方法：" },
+            "proj3-outcome-label": { en: "Outcome:", zh: "成果：" },
+            "proj3-contrib-label": { en: "My Contribution:", zh: "我的贡献：" },
+            
+            "proj4-problem-label": { en: "Problem:", zh: "问题：" },
+            "proj4-data-label": { en: "Data:", zh: "数据：" },
+            "proj4-approach-label": { en: "Approach:", zh: "方法：" },
+            "proj4-outcome-label": { en: "Outcome:", zh: "成果：" },
+            "proj4-contrib-label": { en: "My Contribution:", zh: "我的贡献：" },
+            
+            "proj5-problem-label": { en: "Problem:", zh: "问题：" },
+            "proj5-data-label": { en: "Data:", zh: "数据：" },
+            "proj5-approach-label": { en: "Approach:", zh: "方法：" },
+            "proj5-outcome-label": { en: "Outcome:", zh: "成果：" },
+            "proj5-contrib-label": { en: "My Contribution:", zh: "我的贡献：" },
+            
+            // Project 1
+            "proj1-title": {
+                en: "Lane Change - Deep Learning Game",
+                zh: "车道变换避障游戏"
+            },
+            "proj1-problem": {
+                en: "Develop an AI-driven obstacle avoidance game using reinforcement learning to realize automatic lane change and obstacle avoidance.",
+                zh: "使用强化学习开发一个AI驱动的避障游戏，实现自动变道和障碍物避让。"
+            },
+            "proj1-data": {
+                en: "Real-time game environment state data including lane position, obstacle distance and action feedback.",
+                zh: "实时游戏环境状态数据，包括车道位置、障碍物距离和动作反馈。"
+            },
+            "proj1-approach": {
+                en: "Implemented Q-Learning algorithm, designed reward function and epsilon-greedy exploration strategy.",
+                zh: "实现了Q-Learning算法，设计了奖励函数和epsilon-greedy探索策略。"
+            },
+            "proj1-outcome": {
+                en: "AI agent can independently complete obstacle avoidance tasks, stable performance in 3-lane game environment.",
+                zh: "AI智能体能够独立完成避障任务，在3车道游戏环境中表现稳定。"
+            },
+            "proj1-contrib": {
+                en: "Independent development of full project including environment construction, agent design, training and deployment.",
+                zh: "独立完成整个项目开发，包括环境构建、智能体设计、训练和部署。"
+            },
+            
+            // Project 2
+            "proj2-title": {
+                en: "HK Intelligent Trip Planner",
+                zh: "香港智能行程规划器"
+            },
+            "proj2-problem": {
+                en: "Users need a customized travel planner with budget, pace and preference constraints.",
+                zh: "用户需要一个包含预算、节奏和偏好约束的个性化旅行规划器。"
+            },
+            "proj2-data": {
+                en: "Hong Kong attractions, food, accommodation and transportation dataset.",
+                zh: "香港景点、美食、住宿和交通数据集。"
+            },
+            "proj2-approach": {
+                en: "Built Planner + Critic multi-agent system based on Ollama & Mistral-7B.",
+                zh: "基于Ollama与Mistral-7B构建了Planner + Critic多Agent系统。"
+            },
+            "proj2-outcome": {
+                en: "Realized intelligent itinerary generation with budget estimation, pace control and preference matching, stable multi-turn interaction.",
+                zh: "实现了智能行程生成，支持预算估算、节奏控制和偏好匹配，具有稳定的多轮交互能力。"
+            },
+            "proj2-contrib": {
+                en: "As team leader, completed agent development, system integration and architecture design.",
+                zh: "作为团队组长，完成了智能体开发、系统集成和架构设计。"
+            },
+            
+            // Project 3
+            "proj3-title": {
+                en: "AgenticRAG for University Policies & Courses",
+                zh: "AgenticRAG 校园政策与课程智能问答系统"
+            },
+            "proj3-problem": {
+                en: "Students cannot quickly query university policies, courses and assignment information.",
+                zh: "学生无法快速查询大学政策、课程和作业信息。"
+            },
+            "proj3-data": {
+                en: "University policy documents, course syllabi and academic notices.",
+                zh: "大学政策文件、课程大纲和学术通知。"
+            },
+            "proj3-approach": {
+                en: "Develop an intelligent Q&A system based on Retrieval-Augmented Generation (RAG) and Agentic architecture.",
+                zh: "基于检索增强生成（RAG）和Agentic架构开发智能问答系统。"
+            },
+            "proj3-outcome": {
+                en: "Realized accurate intelligent Q&A for university information, reduced query costs and improved answer accuracy and reasoning ability.",
+                zh: "实现了大学信息的准确智能问答，降低了查询成本，提高了答案准确性和推理能力。"
+            },
+            "proj3-contrib": {
+                en: "Data collection, test case design, comparative experiments between AgenticRAG and RAG.",
+                zh: "数据收集、测试用例设计、AgenticRAG与传统RAG的对比实验。"
+            },
+            
+            // Project 4
+            "proj4-title": {
+                en: "Machine Learning on Titanic Passenger Data",
+                zh: "泰坦尼克号乘客数据机器学习"
+            },
+            "proj4-problem": {
+                en: "Build machine learning models to predict the survival probability of Titanic passengers and mine key factors affecting survival rate.",
+                zh: "构建机器学习模型预测泰坦尼克号乘客生存概率，并挖掘影响生存率的关键因素。"
+            },
+            "proj4-data": {
+                en: "Public Titanic passenger dataset including personal information, ticket information and survival status.",
+                zh: "公开的泰坦尼克号乘客数据集，包含个人信息、票务信息和生存状态。"
+            },
+            "proj4-approach": {
+                en: "Data cleaning, EDA, feature engineering, classification model training.",
+                zh: "数据清洗、探索性数据分析（EDA）、特征工程、分类模型训练。"
+            },
+            "proj4-outcome": {
+                en: "Completed the full data processing process, provided high-quality data support for model training and result analysis.",
+                zh: "完成了完整的数据处理流程，为模型训练和结果分析提供了高质量数据支持。"
+            },
+            "proj4-contrib": {
+                en: "Responsible for data acquisition, data cleaning, preprocessing and Exploratory Data Analysis (EDA) of the Titanic dataset.",
+                zh: "负责泰坦尼克号数据集的数据获取、清洗、预处理和探索性数据分析（EDA）。"
+            },
+            
+            // Project 5
+            "proj5-title": {
+                en: "From Linear Baseline to Residual CNN: CIFAR-100 Classification",
+                zh: "从线性基线到Residual CNN：CIFAR-100图像分类"
+            },
+            "proj5-problem": {
+                en: "Complete image classification task on CIFAR-100 dataset, iterate and optimize from linear baseline model to residual CNN model.",
+                zh: "在CIFAR-100数据集上完成图像分类任务，从线性基线模型逐步迭代优化到Residual CNN模型。"
+            },
+            "proj5-data": {
+                en: "CIFAR-100 image dataset containing 100 categories of color image data.",
+                zh: "包含100类彩色图像数据的CIFAR-100图像数据集。"
+            },
+            "proj5-approach": {
+                en: "Dataset splitting, data normalization, data augmentation, and linear baseline model training.",
+                zh: "数据集划分、数据标准化、数据增强以及线性基线模型训练。"
+            },
+            "proj5-outcome": {
+                en: "Completed baseline model construction and data preprocessing, laid a foundation for the optimization of deep learning models.",
+                zh: "完成了基线模型构建和数据预处理，为深度学习模型的优化奠定了基础。"
+            },
+            "proj5-contrib": {
+                en: "Dataset processing, normalization, augmentation and linear baseline.",
+                zh: "数据集处理、标准化、数据增强以及线性基线模型实现。"
+            },
+            
+            // Resume & Contact
+            "resume-title": {
+                en: "Resume",
+                zh: "简历"
+            },
+            "resume-desc": {
+                en: "Download my full resume to learn more about my education, skills and projects.",
+                zh: "下载我的完整简历，了解更多关于我的教育背景、技能和项目经历。"
+            },
+            "contact-title": {
+                en: "Contact Me",
+                zh: "联系我"
+            },
+            "contact-footer": {
+                en: "Looking forward to connecting with you!",
+                zh: "期待与您建立联系！"
+            },
+            "footer-text": {
+                en: "© 2026 JIAYING HUI | AI Agent Engineer Personal Website",
+                zh: "© 2026 惠嘉盈 | AI Agent 工程师个人网站"
+            }
+        };
+
+        function switchLanguage() {
+            isChinese = !isChinese;
+            const langText = document.getElementById('langText');
+            const langToggle = document.getElementById('langToggle');
+            
+            if (isChinese) {
+                langText.textContent = 'Switch to English';
+                langToggle.innerHTML = `<i class="fas fa-language"></i> <span id="langText">Switch to English</span>`;
+            } else {
+                langText.textContent = '切换至中文';
+                langToggle.innerHTML = `<i class="fas fa-language"></i> <span id="langText">切换至中文</span>`;
+            }
+
+            // Update all translatable elements
+            Object.keys(translations).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const trans = translations[id];
+                    if (element.tagName === 'UL') {
+                        element.innerHTML = isChinese ? trans.zh : trans.en;
+                    } else {
+                        element.textContent = isChinese ? trans.zh : trans.en;
+                    }
+                }
             });
-        });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+
+            // Update html lang attribute
+            document.documentElement.lang = isChinese ? 'zh' : 'en';
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const langToggle = document.getElementById('langToggle');
+            const langToggleMobile = document.getElementById('langToggleMobile');
+
+            // Mobile menu toggle
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking links
+            document.querySelectorAll('#mobileMenu a').forEach(item => {
+                item.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Language toggle (desktop and mobile)
+            langToggle.addEventListener('click', switchLanguage);
+            langToggleMobile.addEventListener('click', switchLanguage);
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
         });
